@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Student Registration | Northstar College</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#main-content" aria-label="Northstar College home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>Northstar <span class="brand-light">College</span></span>
+      </a>
+      <span class="header-note"><span class="status-dot"></span> Admissions are open</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+      <h1 id="page-title">Student registration</h1>
+      <p class="intro-copy">Create your student profile to begin your journey with us. Fields marked with <span class="required-mark" aria-hidden="true">*</span> are required.</p>
+    </section>
+
+    <section class="form-card" id="main-content" aria-label="Student registration form">
+      <div class="card-topline">
+        <div>
+          <p class="section-kicker">APPLICATION FORM</p>
+          <h2>Tell us about yourself</h2>
+        </div>
+        <span class="step-badge"><span>01</span> Personal details</span>
+      </div>
+
+      <div id="success-message" class="success-message" role="status" aria-live="polite" hidden>
+        <span class="success-icon" aria-hidden="true">✓</span>
+        <div>
+          <strong>Registration successful!</strong>
+          <p>Your information has been validated. Welcome to Northstar College.</p>
+        </div>
+      </div>
+
+      <form id="registration-form" novalidate>
+        <div class="form-section">
+          <div class="section-heading">
+            <span class="section-number">1</span>
+            <div>
+              <h3>Personal information</h3>
+              <p>Use your legal name and current contact details.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="student-id">Student ID <span aria-hidden="true">*</span></label>
+              <input id="student-id" name="studentId" type="text" autocomplete="off" placeholder="e.g. 2026-00123" required
+                data-error-required="Enter your student ID."
+                data-error-invalid="Use 3–20 letters, numbers, or hyphens.">
+              <small class="field-error" id="student-id-error"></small>
+            </div>
+            <div class="field">
+              <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Your first and last name" required
+                data-error-required="Enter your full name."
+                data-error-invalid="Enter at least two characters.">
+              <small class="field-error" id="full-name-error"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email address <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required
+                data-error-required="Enter your email address."
+                data-error-invalid="Enter a valid email address, such as you@example.com.">
+              <small class="field-error" id="email-error"></small>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+63 912 345 6789" required
+                aria-describedby="phone-hint phone-error"
+                data-error-required="Enter your phone number."
+                data-error-invalid="Use 10–15 digits, with an optional leading +.">
+              <small class="field-hint" id="phone-hint">Include your country code if needed.</small>
+              <small class="field-error" id="phone-error"></small>
+            </div>
+            <div class="field">
+              <label for="birth-date">Date of birth <span aria-hidden="true">*</span></label>
+              <input id="birth-date" name="birthDate" type="date" autocomplete="bday" required
+                data-error-required="Select your date of birth."
+                data-error-invalid="Date of birth cannot be in the future.">
+              <small class="field-error" id="birth-date-error"></small>
+            </div>
+            <fieldset class="field choice-field" id="gender-field">
+              <legend>Gender <span aria-hidden="true">*</span></legend>
+              <div class="choice-row">
+                <label class="choice-option"><input type="radio" name="gender" value="Female"> <span>Female</span></label>
+                <label class="choice-option"><input type="radio" name="gender" value="Male"> <span>Male</span></label>
+                <label class="choice-option"><input type="radio" name="gender" value="Prefer not to say"> <span>Prefer not to say</span></label>
+              </div>
+              <small class="field-error" id="gender-error"></small>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-heading">
+            <span class="section-number">2</span>
+            <div>
+              <h3>Academic details</h3>
+              <p>Choose the program and year level you are applying for.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="program">Program <span aria-hidden="true">*</span></label>
+              <select id="program" name="program" required
+                data-error-required="Select a program.">
+                <option value="">Choose your program</option>
+                <option value="BS Computer Science">BS Computer Science</option>
+                <option value="BS Information Technology">BS Information Technology</option>
+                <option value="BS Business Administration">BS Business Administration</option>
+                <option value="BS Psychology">BS Psychology</option>
+                <option value="BA Communication">BA Communication</option>
+                <option value="BS Education">BS Education</option>
+              </select>
+              <small class="field-error" id="program-error"></small>
+            </div>
+            <div class="field">
+              <label for="year-level">Year level <span aria-hidden="true">*</span></label>
+              <select id="year-level" name="yearLevel" required
+                data-error-required="Select your year level.">
+                <option value="">Choose your year level</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="5th Year">5th Year</option>
+              </select>
+              <small class="field-error" id="year-level-error"></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-heading">
+            <span class="section-number">3</span>
+            <div>
+              <h3>Account &amp; address</h3>
+              <p>Secure your account and provide your current home address.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="password">Password <span aria-hidden="true">*</span></label>
+              <div class="password-wrap">
+                <input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required
+                  data-error-required="Create a password."
+                  data-error-invalid="Use at least 8 characters.">
+                <button class="password-toggle" type="button" data-password-target="password" aria-label="Show password" aria-pressed="false">Show</button>
+              </div>
+              <small class="field-hint">Use 8 or more characters.</small>
+              <small class="field-error" id="password-error"></small>
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm password <span aria-hidden="true">*</span></label>
+              <div class="password-wrap">
+                <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Re-enter your password" required
+                  data-error-required="Confirm your password.">
+                <button class="password-toggle" type="button" data-password-target="confirm-password" aria-label="Show password" aria-pressed="false">Show</button>
+              </div>
+              <small class="field-error" id="confirm-password-error"></small>
+            </div>
+            <div class="field full-width">
+              <label for="address">Home address <span aria-hidden="true">*</span></label>
+              <textarea id="address" name="address" rows="3" autocomplete="street-address" placeholder="Street, barangay, city, and province" required
+                data-error-required="Enter your home address."
+                data-error-invalid="Enter at least 5 characters."></textarea>
+              <small class="field-error" id="address-error"></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="agreement-field">
+          <label class="choice-option agreement-option" for="agreement">
+            <input id="agreement" name="agreement" type="checkbox" required>
+            <span>I confirm that the information above is accurate and agree to the school's registration terms. <span aria-hidden="true">*</span></span>
+          </label>
+          <small class="field-error" id="agreement-error"></small>
+        </div>
+
+        <div class="form-footer">
+          <p><span class="required-mark" aria-hidden="true">*</span> Required fields</p>
+          <div class="form-actions">
+            <button class="button button-secondary" type="reset">Reset form</button>
+            <button class="button button-primary" type="submit">Submit registration <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <span>© 2026 Northstar College</span>
+      <span>Need help? Contact <a href="mailto:admissions@northstar.edu">admissions@northstar.edu</a></span>
+    </footer>
+  </main>
+</body>
+</html>
